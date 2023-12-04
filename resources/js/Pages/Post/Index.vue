@@ -1,9 +1,11 @@
 <template>
-    <div class="w-96 mx-auto">
-
-        <div class="mt-4 border-t border-gray-300" v-for="post in posts" :key="post.id">
-            <Link class="font-medium text-gray-500" :href="route('post.show', post.id)">{{post.title}}</Link>
-            <div class="font-sm text-gray-800">
+    <div class="w-1/2 mx-auto py-4">
+        <div>
+            <Link class="btn">+New Post</Link>
+        </div>
+        <div class="mt-4 py-4 border-t border-gray-300" v-for="post in posts" :key="post.id">
+            <Link class="font-medium text-gray-800 text-lg" :href="route('post.show', post.id)">{{post.title}}</Link>
+            <div class="font-sm text-gray-500 mt-2">
                 {{post.content}}
             </div>
         </div>

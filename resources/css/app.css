@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply text-gray-100 text-lg py-2 px-4 bg-indigo-400 hover:bg-indigo-600 rounded-full
+    }
+}

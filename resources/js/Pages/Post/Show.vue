@@ -6,10 +6,15 @@
         <div class="text-lg text-gray-700">
             {{post.content}}
         </div>
+        <div class="mt-4">
+            <Link class="btn" :href="route('post.index')">Back</Link>
+        </div>
     </div>
 </template>
 
 <script setup>
+import {Link} from "@inertiajs/vue3";
+
 defineProps({
     post: Array
 })
