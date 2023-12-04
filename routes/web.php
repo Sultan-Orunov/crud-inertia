@@ -27,6 +27,8 @@ Route::get('/', function () {
 
 Route::get('/posts', \App\Http\Controllers\Post\IndexController::class)->name('post.index');
 
+Route::get('/posts/{post}', \App\Http\Controllers\Post\ShowController::class)->name('post.show');
+
 Route::get('/dashboard', function () {
     return inertia('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
