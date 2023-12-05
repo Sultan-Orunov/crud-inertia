@@ -1,5 +1,7 @@
 <template>
     <div class="w-1/2 mx-auto py-4">
+        <div class="text-green-600 p-4 rounded-full border border-green-600 bg-green-400 font-medium mt-4 mb-4" v-if="page.props.flash">{{page.props.flash}}</div>
+
         <div>
             <Link class="btn" :href="route('post.create')">+New Post</Link>
         </div>
@@ -13,7 +15,9 @@
 </template>
 
 <script setup>
-import {Link} from "@inertiajs/vue3";
+import {Link, usePage} from "@inertiajs/vue3";
+
+const page = usePage();
 
 defineProps(['posts'])
 </script>

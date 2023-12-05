@@ -27,6 +27,7 @@ Route::get('/', function () {
 
 Route::get('/posts', \App\Http\Controllers\Post\IndexController::class)->name('post.index');
 Route::get('/posts/create', \App\Http\Controllers\Post\CreateController::class)->name('post.create');
+Route::post('/posts', \App\Http\Controllers\Post\StoreController::class)->name('post.store');
 
 Route::get('/posts/{post}', \App\Http\Controllers\Post\ShowController::class)->name('post.show');
 
