@@ -2,7 +2,7 @@
     <div class="w-1/2 mx-auto pt-8">
         <h1 class="font-semibold text-indigo-600 text-4xl text-center mb-4">Add new post</h1>
 
-        <form>
+        <form @submit.prevent="update">
             <div class="pb-4">
                 <input v-model="form.title" class="w-full border-gray-300 rounded-full p-4 text-lg placeholder:text-gray-400" type="text" placeholder="Post title..."/>
                 <div class="text-red-500" v-if="form.errors.title">{{form.errors.title}}</div>
@@ -23,8 +23,9 @@
 <script setup>
 import {Link, useForm} from "@inertiajs/vue3";
 
+
 const props = defineProps({
-    post: Array
+    post: Object
 })
 
 const form = useForm({
@@ -32,7 +33,7 @@ const form = useForm({
     content: props.post.content
 })
 
-const store = () => form.post(route('post.store'))
+const update = () => form.patch(route('post.update', props.post.id))
 </script>
 
 <style scoped>

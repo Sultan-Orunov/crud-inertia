@@ -30,6 +30,7 @@ Route::get('/posts/create', \App\Http\Controllers\Post\CreateController::class)-
 Route::post('/posts', \App\Http\Controllers\Post\StoreController::class)->name('post.store');
 Route::get('/posts/{post}', \App\Http\Controllers\Post\ShowController::class)->name('post.show');
 Route::get('/posts/{post}/edit', \App\Http\Controllers\Post\EditController::class)->name('post.edit');
+Route::patch('/posts/{post}', \App\Http\Controllers\Post\UpdateController::class)->name('post.update');
 
 Route::get('/dashboard', function () {
     return inertia('Dashboard');

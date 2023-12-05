@@ -10,7 +10,7 @@ class IndexController extends Controller
     public function __invoke()
     {
         return inertia('Post/Index', [
-            'posts' => Post::all()
+            'posts' => Post::orderByDesc('created_at')->get()
         ]);
     }
 }
