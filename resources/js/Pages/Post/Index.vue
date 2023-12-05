@@ -10,8 +10,9 @@
             <div class="font-sm text-gray-500 mt-2">
                 {{post.content}}
             </div>
-            <div class="mt-4">
+            <div class="flex gap-4 mt-4">
                 <Link class="btn" :href="route('post.edit', post.id)">Edit</Link>
+                <Link class="btn-red" method="delete" as="button" :href="route('post.destroy', post.id)">Delete</Link>
             </div>
         </div>
     </div>

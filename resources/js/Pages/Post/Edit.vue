@@ -12,7 +12,7 @@
                 <div class="text-red-500" v-if="form.errors.content">{{form.errors.content}}</div>
             </div>
             <div class="mt-4 flex justify-between">
-                <button class="btn" type="submit">Create</button>
+                <button class="btn" type="submit">Update</button>
                 <Link class="btn" :href="route('post.index')">Back</Link>
             </div>
         </form>

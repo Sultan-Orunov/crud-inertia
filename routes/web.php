@@ -31,6 +31,7 @@ Route::post('/posts', \App\Http\Controllers\Post\StoreController::class)->name('
 Route::get('/posts/{post}', \App\Http\Controllers\Post\ShowController::class)->name('post.show');
 Route::get('/posts/{post}/edit', \App\Http\Controllers\Post\EditController::class)->name('post.edit');
 Route::patch('/posts/{post}', \App\Http\Controllers\Post\UpdateController::class)->name('post.update');
+Route::delete('/posts/{post}', \App\Http\Controllers\Post\DestroyController::class)->name('post.destroy');
 
 Route::get('/dashboard', function () {
     return inertia('Dashboard');
