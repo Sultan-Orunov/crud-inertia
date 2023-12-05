@@ -10,6 +10,9 @@
             <div class="font-sm text-gray-500 mt-2">
                 {{post.content}}
             </div>
+            <div class="mt-4">
+                <Link class="btn" :href="route('post.edit', post.id)">Edit</Link>
+            </div>
         </div>
     </div>
 </template>
